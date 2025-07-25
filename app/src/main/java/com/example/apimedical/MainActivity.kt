@@ -1,9 +1,12 @@
 package com.example.apimedical
 
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.view.inputmethod.InputMethodManager
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -36,6 +39,11 @@ class MainActivity : AppCompatActivity() {
 
         outputTextView = findViewById(R.id.txtOutput)
         inputIdEditText = findViewById(R.id.etInputId)
+        findViewById<Button>(R.id.btnGetAllById).setOnClickListener {
+            hideKeyboard()
+            getAllLoans()
+
+        }
 
     }
 
@@ -80,11 +88,17 @@ class MainActivity : AppCompatActivity() {
                             Log.e("GetAllLoans", "API Error: ${ex.message}")
                             outputTextView.text = "Error: Could not fetch loans from the server"
                         }
+
                     }
 
 
                 }
             }
         }
+    }
+    private fun hideKeyboard(){
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
+
     }
 }
