@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         outputTextView = findViewById(R.id.txtOutput)
         inputIdEditText = findViewById(R.id.etInputId)
-        findViewById<Button>(R.id.btnGetAllById).setOnClickListener {
+        findViewById<Button>(R.id.btnGetAll).setOnClickListener {
             hideKeyboard()
             getAllLoans()
 
