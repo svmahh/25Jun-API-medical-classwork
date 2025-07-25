@@ -70,9 +70,12 @@
 
     <TextView
         android:id="@+id/txtOutput"
-        android:layout_width="367dp"
-        android:layout_height="45dp"
+        android:layout_width="390dp"
+        android:layout_height="334dp"
+        android:isScrollContainer="true"
+        android:scrollbarStyle="insideInset"
         android:text="API Output"
+        android:verticalScrollbarPosition="right"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.159"
